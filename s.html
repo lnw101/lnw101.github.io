@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ถึงการ์ตูน 💌</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffd9e8, #fff5f9);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+    text-align: center;
+}
+
+
+/* กล่องเว็บ */
+
+.container {
+    width: 90%;
+    max-width: 540px;
+
+    background: rgba(255,255,255,0.93);
+
+    padding: 40px 28px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 45px rgba(255,100,150,0.18);
+
+    position: relative;
+
+    z-index: 10;
+
+    animation: appear 0.8s ease;
+}
+
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* หัวใจ */
+
+.heart {
+    font-size: 58px;
+
+    animation: beat 1.3s infinite;
+
+    margin-bottom: 8px;
+}
+
+
+@keyframes beat {
+
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+}
+
+
+/* หัวข้อ */
+
+h1 {
+    color: #ff4f87;
+
+    font-size: 29px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ข้อความ */
+
+p {
+    color: #555;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* ปุ่ม */
+
+button {
+
+    border: none;
+
+    padding: 14px 25px;
+
+    margin: 10px 5px;
+
+    border-radius: 30px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        left 0.15s ease,
+        top 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+button:hover {
+    transform: scale(1.07);
+}
+
+
+/* ปุ่มหลัก */
+
+#openBtn,
+#yesBtn,
+#igBtn {
+
+    background: #ff5c93;
+
+    color: white;
+
+    box-shadow:
+        0 5px 15px rgba(255,92,147,0.25);
+}
+
+
+/* หน้าอื่น */
+
+#message,
+#answer {
+    display: none;
+}
+
+
+/* IG */
+
+.instagram {
+
+    display: inline-block;
+
+    margin-top: 5px;
+
+    padding: 10px 20px;
+
+    border-radius: 20px;
+
+    background: #fff0f5;
+
+    color: #ff4f87;
+
+    font-size: 19px;
+
+    font-weight: bold;
+}
+
+
+/* อิโมจิลอย */
+
+.floating {
+
+    position: fixed;
+
+    top: -60px;
+
+    z-index: 1;
+
+    pointer-events: none;
+
+    animation: fall linear forwards;
+}
+
+
+@keyframes fall {
+
+    0% {
+
+        transform:
+            translateY(-60px)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0.85;
+    }
+
+}
+
+
+/* ปุ่มหนี */
+
+#noBtn {
+
+    background: #eeeeee;
+
+    color: #555;
+
+    position: relative;
+
+    transition:
+        left 0.15s ease,
+        top 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+/* ปลาการ์ตูนหน้า 2 */
+
+.page-decoration {
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- ======================= -->
+<!-- หน้าแรก -->
+<!-- ======================= -->
+
+<div id="start">
+
+    <div class="heart">
+        💌
+    </div>
+
+    <h1>
+        วันศุกร์สักทีนะ! 👋
+    </h1>
+
+    <p>
+        สวัสดีครับ<br>
+        ผมชื่อบีมนะ :)
+    </p>
+
+    <p>
+        ผมทำอันนี้มาให้การ์ตูนโดยเฉพาะเลย
+        <br>
+        ไม่รู้ว่าการ์ตูนจะคิดยังไง
+        <br>
+        แต่ถ้ามาถึงหน้านี้แล้ว...
+    </p>
+
+    <h1>
+        ลองเปิดดูหน่อยนะครับ ✨
+    </h1>
+
+    <button
+        id="openBtn"
+        onclick="openMessage()">
+
+        เปิดดู 👀
+
+    </button>
+
+</div>
+
+
+
+<!-- ======================= -->
+<!-- หน้า 2 -->
+<!-- ======================= -->
+
+<div id="message">
+
+    <div class="page-decoration">
+        🐠
+    </div>
+
+
+    <p>
+
+        เราสองคนยังไม่เคยคุยกันต่อหน้ากันจริง ๆ เลย
+
+        <br>
+
+        เพราะงั้นเราอาจจะยังไม่รู้จักกันมากเท่าไหร่
+
+    </p>
+
+
+    <p>
+
+        แต่เรารู้สึกว่าการ์ตูนเป็นคนน่ารักดี
+
+        <br>
+
+        เลยอยากลองทำความรู้จักให้มากกว่านี้
+
+    </p>
+
+
+    <p>
+
+        ถ้าการ์ตูนโอเค
+        เราขอเริ่มจากการคุยกันก่อนก็ได้
+
+        <br>
+
+        ไม่ต้องรีบตอบอะไรก็ได้นะ :)
+
+    </p>
+
+
+    <div id="buttons">
+
+        <button
+            id="yesBtn"
+            onclick="yes()">
+
+            โอเค 💗
+
+        </button>
+
+
+        <button
+            id="noBtn">
+
+            ขอคิดแป๊บนึง 🤔
+
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ======================= -->
+<!-- หน้า 3 -->
+<!-- ======================= -->
+
+<div id="answer">
+
+    <div class="heart">
+        ❤️
+    </div>
+
+
+    <h1>
+        ขอบคุณนะครับ
+    </h1>
+
+
+    <p>
+
+        <strong>
+            ทักมาหาผมหน่อยนะครับ
+        </strong>
+
+        <br>
+
+        มีของเล็ก ๆ น้อย ๆ จะให้ :)
+
+    </p>
+
+
+    <p>
+
+        <strong>
+            Instagram ของบีม 📷
+        </strong>
+
+    </p>
+
+
+    <div class="instagram">
+
+        @beamlnwza123
+
+    </div>
+
+
+    <br>
+
+
+    <button
+        id="igBtn"
+        onclick="openInstagram()">
+
+        ไปหาไอจีบีม 💗
+
+    </button>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* ========================= */
+/* เปิดหน้า 2 */
+/* ========================= */
+
+function openMessage() {
+
+    document.getElementById("start").style.display = "none";
+
+    document.getElementById("message").style.display = "block";
+
+}
+
+
+
+/* ========================= */
+/* ตอบตกลง */
+/* ========================= */
+
+function yes() {
+
+    document.getElementById("message").style.display = "none";
+
+    document.getElementById("answer").style.display = "block";
+
+    createHearts();
+
+}
+
+
+
+/* ========================= */
+/* เปิด Instagram */
+/* ========================= */
+
+function openInstagram() {
+
+    window.open(
+        "https://www.instagram.com/beamlnwza123/",
+        "_blank"
+    );
+
+}
+
+
+
+/* ========================= */
+/* ปุ่ม "ขอคิดแป๊บนึง" วิ่งหนี */
+/* ========================= */
+
+const noBtn =
+    document.getElementById("noBtn");
+
+
+let dodgeCount = 0;
+
+
+function dodgeButton() {
+
+    dodgeCount++;
+
+
+    /*
+        ปุ่มจะหลบอยู่ใกล้ ๆ
+        ไม่วิ่งไปไกลทั้งหน้าจอ
+    */
+
+    const moves = [
+
+        { x: -70, y: 0 },
+
+        { x: 65, y: 0 },
+
+        { x: 0, y: -50 },
+
+        { x: 0, y: 50 },
+
+        { x: -55, y: -35 },
+
+        { x: 55, y: 35 },
+
+        { x: -50, y: 35 },
+
+        { x: 50, y: -35 }
+
+    ];
+
+
+    const move =
+        moves[
+            dodgeCount % moves.length
+        ];
+
+
+    noBtn.style.transform =
+        `translate(${move.x}px, ${move.y}px)`;
+
+}
+
+
+
+/* คอม */
+
+noBtn.addEventListener(
+    "mouseenter",
+    dodgeButton
+);
+
+
+/* iPad / มือถือ */
+
+noBtn.addEventListener(
+    "touchstart",
+
+    function(event) {
+
+        event.preventDefault();
+
+        dodgeButton();
+
+    },
+
+    { passive: false }
+);
+
+
+
+/* ========================= */
+/* อิโมจิลอยตลอดเวลา */
+/* ========================= */
+
+const emojis = [
+
+    "🍥",
+    "🍙",
+    "🌸",
+    "✨",
+    "💗",
+    "💕",
+    "💖",
+    "🫧",
+    "⭐",
+    "🌷",
+    "🍓",
+    "☁️"
+
+];
+
+
+function createFloatingEmoji() {
+
+    const emoji =
+        document.createElement("div");
+
+
+    emoji.className =
+        "floating";
+
+
+    emoji.innerHTML =
+        emojis[
+            Math.floor(
+                Math.random() *
+                emojis.length
+            )
+        ];
+
+
+    emoji.style.left =
+        Math.random() * 100 + "vw";
+
+
+    emoji.style.fontSize =
+        (18 + Math.random() * 22) + "px";
+
+
+    emoji.style.animationDuration =
+        (5 + Math.random() * 6) + "s";
+
+
+    document.body.appendChild(
+        emoji
+    );
+
+
+    setTimeout(() => {
+
+        emoji.remove();
+
+    }, 12000);
+
+}
+
+
+/* สร้างอิโมจิเรื่อย ๆ */
+
+setInterval(
+    createFloatingEmoji,
+    700
+);
+
+
+
+/* ========================= */
+/* หัวใจตอนตอบตกลง */
+/* ========================= */
+
+function createHearts() {
+
+    for (
+        let i = 0;
+        i < 50;
+        i++
+    ) {
+
+        setTimeout(() => {
+
+            const heart =
+                document.createElement("div");
+
+
+            heart.className =
+                "floating";
+
+
+            const hearts = [
+
+                "❤️",
+                "💗",
+                "💖",
+                "💕",
+                "💘",
+                "💝"
+
+            ];
+
+
+            heart.innerHTML =
+                hearts[
+                    Math.floor(
+                        Math.random() *
+                        hearts.length
+                    )
+                ];
+
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+
+            heart.style.fontSize =
+                (20 + Math.random() * 20) + "px";
+
+
+            heart.style.animationDuration =
+                (2 + Math.random() * 3) + "s";
+
+
+            document.body.appendChild(
+                heart
+            );
+
+
+            setTimeout(() => {
+
+                heart.remove();
+
+            }, 6000);
+
+
+        }, i * 80);
+
+    }
+
+}
+
+
+</script>
+
+</body>
+</html>
